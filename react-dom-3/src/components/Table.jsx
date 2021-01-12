@@ -1,7 +1,6 @@
 import React from 'react'
 import Tablerow from './TableRow'
 import '../index.css'
-import Tablecell from './TableCell'
 
 class Table extends React.Component {
 
