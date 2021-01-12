@@ -1,5 +1,4 @@
 import React from 'react'
-import '../index.css'
 
 class Tablecell extends React.Component {
 

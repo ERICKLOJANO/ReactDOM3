@@ -4,6 +4,7 @@ import './App.css';
 import Table from './components/Table'
 
 class App extends Component{
+
   constructor(props) {
     super(props)
     this.state = {
@@ -39,6 +40,7 @@ class App extends Component{
       console.log("The user clicked add column, column has been removed")
     }
   };
+
   
   addCol = () => {
     let column = this.state.columns
@@ -68,7 +70,7 @@ class App extends Component{
             <option value = "yellow">Yellow</option>
             </select>
         </div>
-        <Table />
+        <Table row = {this.props.rows} col = {this.props.col}/>
       </div>
     );
     }
