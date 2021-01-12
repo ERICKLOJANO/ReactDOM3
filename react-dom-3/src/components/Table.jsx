@@ -3,12 +3,20 @@ import Tablerow from './TableRow'
 
 class Table extends React.Component {
 
+    constructor(props) {
+        super(props);
+    }
+
     render() {
 
         return (
             //testing fucntionality of tablerow, need to add rows and cells on button clicks
             <table>
-                <Tablerow />
+                {
+                    this.props.row.map((rows) => {
+                        return <Tablerow col = {this.props.col} />
+                    })
+                }
             </table>
         )
     }
