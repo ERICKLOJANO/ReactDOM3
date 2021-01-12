@@ -1,5 +1,5 @@
 import React from 'react'
-import Tablerow from './tableRow'
+import Tablerow from './TableRow'
 
 class Table extends React.Component {
 
