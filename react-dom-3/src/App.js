@@ -4,6 +4,17 @@ import './App.css';
 import Table from './components/Table'
 
 class App extends Component{
+  this.state = {
+    columns: ['col 1', 'col 2'],
+    rows: [''],
+    color: ''
+  }
+}
+addRow = () => {
+  let row = this.state.row
+  rows.push('')
+  this.setState({rows: row})
+}
 
 
   //this will control grid
