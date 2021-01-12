@@ -2,8 +2,9 @@ import React from 'react'
 
 class Tablecell extends React.Component {
 
+    //creates cell with event handler when clicked
     customCell = () => {
-        //use alert to test if onclick works
+        //use alert to test if onclick works, change to color change function
         let cell = <td onClick = {window.alert}></td>
         return cell
     }
