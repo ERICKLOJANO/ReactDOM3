@@ -4,15 +4,18 @@ class Tablecell extends React.Component {
 
     //creates cell with event handler when clicked
     customCell = () => {
-        //use alert to test if onclick works, change to color change function
-        let cell = <td onClick = {window.alert}></td>
+        let cell = <td onClick = {this.changeColor}></td>
         return cell
+    }
+    
+    //changes cell color when clicked
+    changeColor = (event) => {
+        event.target.style.background = this.props.color
     }
 
     render() {
-
+        //returns cell to be added into row
         return (
-            //return function to test if the function works
                 this.customCell()
         )
     }

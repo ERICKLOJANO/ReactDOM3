@@ -12,6 +12,8 @@ class App extends Component{
       color: ''
     }
   }
+
+  //updates number of rows
   addRow = () => {
     let row = this.state.rows
     row.push('')
@@ -39,7 +41,15 @@ class App extends Component{
       console.log("The user clicked add column, column has been removed")
     }
   };
+
+  //updates color when a new color is selected
+  //if choose color is selected, cell color is changed to white when clicked
+  updateColor = (event) => {
+    console.log(event.target.value)
+    this.setState({color: event.target.value})
+  }
   
+  //updates number of columns
   addCol = () => {
     let column = this.state.columns
     column.push('')
@@ -60,7 +70,7 @@ class App extends Component{
         </div>
   
         <div className = "colorsContainer">
-          <select>
+          <select onChange = {this.updateColor}>
             <option value = "white">Choose Color</option>
             <option value = "blue">Blue</option>
             <option value = "green">Green</option>
@@ -68,7 +78,8 @@ class App extends Component{
             <option value = "yellow">Yellow</option>
             </select>
         </div>
-        <Table row = {this.state.rows} col = {this.state.columns}/>
+        {/*Passes down values from state into child components*/}
+        <Table row = {this.state.rows} col = {this.state.columns} color = {this.state.color} />
       </div>
     );
     }
