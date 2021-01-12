@@ -23,7 +23,7 @@ class App extends React.Component() {
     return (
       <div className="App">
       <div>
-      <button onClick = {this.addRow}>Add Row</button>
+      {/*<button onClick = {this.addRow}>Add Row</button>*/};
       </div>
       <Table col = {this.state.columns} row = {this.state.rows} />
       </div>
