@@ -21,7 +21,7 @@ class App extends React.Component {
     this.setState({columns: column})
   }
 
-  ender() {
+  render() {
     return (
       <div className="App">
       <div>
