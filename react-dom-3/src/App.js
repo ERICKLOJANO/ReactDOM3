@@ -21,12 +21,15 @@ class App extends React.Component {
     this.setState({columns: column})
   }
 
-  render() {
+  ender() {
     return (
       <div className="App">
-        <Table col = {this.state.columns} row = {this.state.rows}/>
+      <div>
+      {/*<button onClick = {this.addRow}>Add Row</button>*/};
       </div>
-    );
+      <Table col = {this.state.columns} row = {this.state.rows} />
+      </div>
+   );
   }
 }
 
