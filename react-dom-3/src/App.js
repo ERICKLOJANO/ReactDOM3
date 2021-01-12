@@ -4,7 +4,6 @@ import './App.css';
 import Table from './components/Table'
 
 class App extends Component{
-
   constructor(props) {
     super(props)
     this.state = {
@@ -14,8 +13,8 @@ class App extends Component{
     }
   }
   addRow = () => {
-    let row = this.state.row
-    rows.push('')
+    let row = this.state.rows
+    row.push('')
     this.setState({rows: row})
   }
 
@@ -26,7 +25,7 @@ class App extends Component{
 
     //checks if add row was clicked
     if(userClick === "addRow"){
-      console.log("The user clicked add row, row has been added")
+      this.addRow()
     }
     else if (userClick === "removeRow") {
       console.log("The user clicked remove row, row has been removed")
@@ -34,13 +33,12 @@ class App extends Component{
 
     //checks if add column was clicked
     if(userClick === "addColumn"){
-      console.log("The user clicked add column, column has been added")
+      this.addCol()
     }
     else if (userClick === "RemoveColumn") {
       console.log("The user clicked add column, column has been removed")
     }
   };
-
   
   addCol = () => {
     let column = this.state.columns
@@ -70,7 +68,7 @@ class App extends Component{
             <option value = "yellow">Yellow</option>
             </select>
         </div>
-        <Table row = {this.props.rows} col = {this.props.col}/>
+        <Table row = {this.state.rows} col = {this.state.columns}/>
       </div>
     );
     }

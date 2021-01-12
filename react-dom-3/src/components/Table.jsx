@@ -13,7 +13,7 @@ class Table extends React.Component {
             //testing fucntionality of tablerow, need to add rows and cells on button clicks
             <table>
                 {
-                    this.props.row.map((rows) => {
+                   this.props.row.map((rows) => {
                         return <Tablerow col = {this.props.col} />
                     })
                 }
