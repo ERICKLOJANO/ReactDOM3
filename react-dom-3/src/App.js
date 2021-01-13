@@ -19,6 +19,11 @@ class App extends Component{
     row.push('')
     this.setState({rows: row})
   }
+  removeRow = () => {
+    let row = this.state.rows
+    row.pop('')
+    this.setState({rows: row})
+  }
 
 
   //this will control grid
@@ -30,6 +35,7 @@ class App extends Component{
       this.addRow()
     }
     else if (userClick === "removeRow") {
+      this.removeRow()
       console.log("The user clicked remove row, row has been removed")
     }
 
@@ -38,6 +44,7 @@ class App extends Component{
       this.addCol()
     }
     else if (userClick === "RemoveColumn") {
+      this.removeCol()
       console.log("The user clicked add column, column has been removed")
     }
   };
@@ -48,11 +55,16 @@ class App extends Component{
     console.log(event.target.value)
     this.setState({color: event.target.value})
   }
-  
+
   //updates number of columns
   addCol = () => {
     let column = this.state.columns
     column.push('')
+    this.setState({columns: column})
+  }
+  removeCol = () => {
+    let column = this.state.columns
+    column.pop('')
     this.setState({columns: column})
   }
 
@@ -68,7 +80,7 @@ class App extends Component{
           <button value = "addColumn" onClick = {this.buttonClick}>Add Column</button>
           <button value = "RemoveColumn" onClick = {this.buttonClick}>Remove Column</button>
         </div>
-  
+
         <div className = "colorsContainer">
           <select onChange = {this.updateColor}>
             <option value = "white">Choose Color</option>
