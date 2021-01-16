@@ -14,7 +14,7 @@ class Table extends React.Component {
             <table>
                 {
                    this.props.row.map((rows) => {
-                        return <Tablerow col = {this.props.col} color = {this.props.color} />
+                        return <Tablerow col = {this.props.col} color = {this.props.color} updateCell = {this.props.updateCell}/>
                     })
                 }
             </table>

@@ -14,7 +14,7 @@ class Tablerow extends React.Component {
             <div>
                 <tr>
                     {this.props.col.map((columns) => {
-                        return <Tablecell color = {this.props.color} />
+                        return <Tablecell color = {this.props.color} updateCell = {this.props.updateCell} />
                     })
                     }
                 </tr>

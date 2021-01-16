@@ -56,6 +56,12 @@ class App extends Component{
     this.setState({color: event.target.value})
   }
 
+  //changes cell color when clicked
+  updateCell = (event) => {
+    event.target.style.background = this.state.color
+}
+
+
   //updates number of columns
   addCol = () => {
     let column = this.state.columns
@@ -91,7 +97,7 @@ class App extends Component{
             </select>
         </div>
         {/*Passes down values from state into child components*/}
-        <Table row = {this.state.rows} col = {this.state.columns} color = {this.state.color} />
+        <Table row = {this.state.rows} col = {this.state.columns} color = {this.state.color} updateCell = {this.updateCell} />
       </div>
     );
     }
