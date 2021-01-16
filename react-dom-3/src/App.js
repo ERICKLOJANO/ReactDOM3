@@ -12,9 +12,16 @@ class App extends Component{
       color: ''
     }
   }
+
+  //updates number of rows
   addRow = () => {
     let row = this.state.rows
     row.push('')
+    this.setState({rows: row})
+  }
+  removeRow = () => {
+    let row = this.state.rows
+    row.pop('')
     this.setState({rows: row})
   }
 
@@ -28,6 +35,7 @@ class App extends Component{
       this.addRow()
     }
     else if (userClick === "removeRow") {
+      this.removeRow()
       console.log("The user clicked remove row, row has been removed")
     }
 
@@ -36,13 +44,27 @@ class App extends Component{
       this.addCol()
     }
     else if (userClick === "RemoveColumn") {
+      this.removeCol()
       console.log("The user clicked add column, column has been removed")
     }
   };
-  
+
+  //updates color when a new color is selected
+  //if choose color is selected, cell color is changed to white when clicked
+  updateColor = (event) => {
+    console.log(event.target.value)
+    this.setState({color: event.target.value})
+  }
+
+  //updates number of columns
   addCol = () => {
     let column = this.state.columns
     column.push('')
+    this.setState({columns: column})
+  }
+  removeCol = () => {
+    let column = this.state.columns
+    column.pop('')
     this.setState({columns: column})
   }
 
@@ -58,9 +80,9 @@ class App extends Component{
           <button value = "addColumn" onClick = {this.buttonClick}>Add Column</button>
           <button value = "RemoveColumn" onClick = {this.buttonClick}>Remove Column</button>
         </div>
-  
+
         <div className = "colorsContainer">
-          <select>
+          <select onChange = {this.updateColor}>
             <option value = "white">Choose Color</option>
             <option value = "blue">Blue</option>
             <option value = "green">Green</option>
@@ -68,7 +90,8 @@ class App extends Component{
             <option value = "yellow">Yellow</option>
             </select>
         </div>
-        <Table row = {this.state.rows} col = {this.state.columns}/>
+        {/*Passes down values from state into child components*/}
+        <Table row = {this.state.rows} col = {this.state.columns} color = {this.state.color} />
       </div>
     );
     }

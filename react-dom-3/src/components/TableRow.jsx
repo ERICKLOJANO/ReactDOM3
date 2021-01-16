@@ -10,11 +10,11 @@ class Tablerow extends React.Component {
     render() {
 
         return (
-            //testing functionality of table cell, need to add rows and cells when respective buttons are clicked
+            //creates row with a number of columns equal to col
             <div>
                 <tr>
                     {this.props.col.map((columns) => {
-                        return <Tablecell col2 = {this.props.col} />
+                        return <Tablecell color = {this.props.color} />
                     })
                     }
                 </tr>
